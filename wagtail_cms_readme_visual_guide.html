@@ -1,0 +1,252 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+h2.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+body{font-family:var(--font-sans);color:var(--color-text-primary);}
+.guide{padding:1.5rem 0 2rem;}
+.hero{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1.5rem 1.75rem;margin-bottom:2rem;display:flex;align-items:center;gap:1rem;}
+.hero-icon{width:48px;height:48px;border-radius:var(--border-radius-md);background:#4f46e5;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.hero-title{font-size:18px;font-weight:500;margin-bottom:4px;}
+.hero-sub{font-size:13px;color:var(--color-text-secondary);line-height:1.5;}
+.phase{margin-bottom:2.5rem;}
+.phase-label{display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
+.phase-badge{font-size:11px;font-weight:500;padding:3px 10px;border-radius:99px;letter-spacing:.04em;}
+.phase-line{flex:1;height:0.5px;background:var(--color-border-tertiary);}
+.steps{display:flex;flex-direction:column;gap:12px;}
+.step{display:flex;gap:14px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;}
+.step.done{border-color:var(--color-border-success);background:var(--color-background-success);}
+.step-left{display:flex;flex-direction:column;align-items:center;gap:6px;flex-shrink:0;}
+.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0;}
+.step-connector{width:1px;flex:1;min-height:8px;background:var(--color-border-tertiary);}
+.step-body{flex:1;min-width:0;}
+.step-title{font-size:14px;font-weight:500;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.step-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:10px;}
+.step-desc:last-child{margin-bottom:0;}
+.term{background:#181818;border-radius:var(--border-radius-md);padding:10px 14px;font-family:var(--font-mono);font-size:11.5px;color:#d4d4d4;line-height:1.9;overflow-x:auto;margin-bottom:8px;}
+.term:last-child{margin-bottom:0;}
+.c{color:#9cdcfe;}
+.g{color:#6a9955;}
+.s{color:#ce9178;}
+.tip{border-left:3px solid #4f46e5;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;padding:8px 12px;font-size:12px;color:var(--color-text-secondary);background:var(--color-background-secondary);line-height:1.5;margin-top:8px;}
+.warn{border-left:3px solid #d97706;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;padding:8px 12px;font-size:12px;color:var(--color-text-warning);background:var(--color-background-warning);line-height:1.5;margin-top:8px;}
+.badge-info{background:var(--color-background-info);color:var(--color-text-info);font-size:11px;padding:2px 8px;border-radius:99px;}
+.badge-warn{background:var(--color-background-warning);color:var(--color-text-warning);font-size:11px;padding:2px 8px;border-radius:99px;}
+.badge-ok{background:var(--color-background-success);color:var(--color-text-success);font-size:11px;padding:2px 8px;border-radius:99px;}
+.url-list{display:flex;flex-direction:column;gap:6px;margin-top:8px;}
+.url-row{display:flex;align-items:center;gap:10px;font-size:13px;}
+.url-label{color:var(--color-text-secondary);min-width:90px;font-size:12px;}
+.url-val{font-family:var(--font-mono);font-size:12px;color:var(--color-text-info);}
+.ext-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:0.5px solid var(--color-border-tertiary);}
+.ext-row:last-child{border-bottom:none;}
+.ext-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.ext-name{font-size:13px;font-weight:500;flex:1;}
+.ext-why{font-size:12px;color:var(--color-text-secondary);}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:520px){.two{grid-template-columns:1fr;}}
+.mini-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;}
+.mini-label{font-size:11px;color:var(--color-text-tertiary);margin-bottom:4px;}
+.mini-val{font-family:var(--font-mono);font-size:12px;color:var(--color-text-primary);}
+</style>
+
+<div class="guide">
+<h2 class="sr-only">Step-by-step visual guide to setting up the Wagtail CMS project</h2>
+
+<div class="hero">
+  <div class="hero-icon">
+    <i class="ti ti-ship" aria-hidden="true" style="font-size:24px;color:#fff;"></i>
+  </div>
+  <div>
+    <div class="hero-title">Wagtail CMS — setup guide</div>
+    <div class="hero-sub">From zip file to running site in 10 steps &nbsp;·&nbsp; Python + Node.js required</div>
+  </div>
+</div>
+
+<div class="phase">
+  <div class="phase-label">
+    <span class="phase-badge" style="background:var(--color-background-secondary);color:var(--color-text-secondary);">Prerequisites</span>
+    <div class="phase-line"></div>
+  </div>
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num" style="background:var(--color-background-secondary);color:var(--color-text-secondary);">1</div>
+      </div>
+      <div class="step-body">
+        <div class="step-title"><i class="ti ti-brand-python" aria-hidden="true" style="font-size:16px;color:#4f46e5;"></i> Install Python 3.10+</div>
+        <div class="step-desc">Download from <span style="color:var(--color-text-info);font-family:var(--font-mono);font-size:12px;">python.org/downloads</span> and run the installer.</div>
+        <div class="warn"><i class="ti ti-alert-triangle" aria-hidden="true" style="font-size:14px;vertical-align:-2px;margin-right:4px;"></i>Windows users: tick <strong>"Add Python to PATH"</strong> before clicking Install — don't skip this.</div>
+        <div class="term"><span class="c">python</span> --version &nbsp;<span class="g"># should print Python 3.10 or higher</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num" style="background:var(--color-background-secondary);color:var(--color-text-secondary);">2</div>
+      </div>
+      <div class="step-body">
+        <div class="step-title"><i class="ti ti-brand-nodejs" aria-hidden="true" style="font-size:16px;color:#4f46e5;"></i> Install Node.js 18+</div>
+        <div class="step-desc">Required for Tailwind CSS. Download from <span style="color:var(--color-text-info);font-family:var(--font-mono);font-size:12px;">nodejs.org</span> — pick the LTS version.</div>
+        <div class="term"><span class="c">node</span> --version &nbsp;<span class="g"># should print v18 or higher</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num" style="background:var(--color-background-secondary);color:var(--color-text-secondary);">3</div>
+      </div>
+      <div class="step-body">
+        <div class="step-title"><i class="ti ti-brand-vscode" aria-hidden="true" style="font-size:16px;color:#4f46e5;"></i> Install VS Code</div>
+        <div class="step-desc">Download from <span style="color:var(--color-text-info);font-family:var(--font-mono);font-size:12px;">code.visualstudio.com</span>. Then install these extensions from the Extensions panel (<kbd>Ctrl+Shift+X</kbd>):</div>
+        <div style="margin-top:8px;">
+          <div class="ext-row"><div class="ext-dot" style="background:#4f46e5;"></div><div class="ext-name">Python</div><div class="ext-why">IntelliSense &amp; debugger</div></div>
+          <div class="ext-row"><div class="ext-dot" style="background:#0ea5e9;"></div><div class="ext-name">Tailwind CSS IntelliSense</div><div class="ext-why">Autocomplete in templates</div></div>
+          <div class="ext-row"><div class="ext-dot" style="background:#e67e22;"></div><div class="ext-name">Django</div><div class="ext-why">Template syntax highlighting</div></div>
+          <div class="ext-row"><div class="ext-dot" style="background:#22c55e;"></div><div class="ext-name">SQLite Viewer</div><div class="ext-why">Browse the database</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="phase">
+  <div class="phase-label">
+    <span class="phase-badge" style="background:var(--color-background-info);color:var(--color-text-info);">Project setup</span>
+    <div class="phase-line"></div>
+  </div>
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num" style="background:var(--color-background-info);color:var(--color-text-info);">4</div>
+      </div>
+      <div class="step-body">
+        <div class="step-title"><i class="ti ti-file-zip" aria-hidden="true" style="font-size:16px;color:#4f46e5;"></i> Unzip and open in VS Code</div>
+        <div class="step-desc">Unzip <code>wagtail_cms_project.zip</code>, then open VS Code → <strong>File → Open Folder</strong> → select the <code>wagtail_cms</code> folder.</div>
+        <div class="term"><span class="g"># Or from terminal:</span><br><span class="c">cd</span> ~/Downloads &amp;&amp; <span class="c">unzip</span> wagtail_cms_project.zip<br><span class="c">code</span> wagtail_cms</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num" style="background:var(--color-background-info);color:var(--color-text-info);">5</div>
+      </div>
+      <div class="step-body">
+        <div class="step-title"><i class="ti ti-box" aria-hidden="true" style="font-size:16px;color:#4f46e5;"></i> Create a virtual environment</div>
+        <div class="step-desc">Open the VS Code terminal with <kbd>Ctrl+`</kbd> and run:</div>
+        <div class="two">
+          <div>
+            <div style="font-size:11px;color:var(--color-text-tertiary);margin-bottom:5px;">Windows</div>
+            <div class="term"><span class="c">python</span> -m venv venv<br>venv\Scripts\activate</div>
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--color-text-tertiary);margin-bottom:5px;">macOS / Linux</div>
+            <div class="term"><span class="c">python3</span> -m venv venv<br><span class="c">source</span> venv/bin/activate</div>
+          </div>
+        </div>
+        <div class="tip"><i class="ti ti-info-circle" aria-hidden="true" style="font-size:14px;vertical-align:-2px;margin-right:4px;"></i>You'll see <code>(venv)</code> at the start of your terminal prompt when it's active. VS Code may also prompt you to select this as the Python interpreter — click <strong>Yes</strong>.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num" style="background:var(--color-background-info);color:var(--color-text-info);">6</div>
+      </div>
+      <div class="step-body">
+        <div class="step-title"><i class="ti ti-package" aria-hidden="true" style="font-size:16px;color:#4f46e5;"></i> Install Python &amp; Node dependencies</div>
+        <div class="term"><span class="g"># Python packages</span><br><span class="c">pip</span> install -r requirements.txt<br><br><span class="g"># Tailwind / Node packages</span><br><span class="c">cd</span> theme/static_src<br><span class="c">npm</span> install<br><span class="c">cd</span> ../..</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num" style="background:var(--color-background-info);color:var(--color-text-info);">7</div>
+      </div>
+      <div class="step-body">
+        <div class="step-title"><i class="ti ti-database" aria-hidden="true" style="font-size:16px;color:#4f46e5;"></i> Set up the database</div>
+        <div class="term"><span class="g"># Create all database tables</span><br><span class="c">python</span> manage.py migrate<br><br><span class="g"># Create your admin login</span><br><span class="c">python</span> manage.py createsuperuser</div>
+        <div class="tip"><i class="ti ti-info-circle" aria-hidden="true" style="font-size:14px;vertical-align:-2px;margin-right:4px;"></i>Pick a password like <code>Admin1234!</code> — must be 8+ characters, not all numbers, not too simple.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num" style="background:var(--color-background-info);color:var(--color-text-info);">8</div>
+      </div>
+      <div class="step-body">
+        <div class="step-title"><i class="ti ti-brush" aria-hidden="true" style="font-size:16px;color:#4f46e5;"></i> Build Tailwind CSS</div>
+        <div class="term"><span class="c">cd</span> theme/static_src<br><span class="c">npm</span> run build<br><span class="c">cd</span> ../..</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="phase">
+  <div class="phase-label">
+    <span class="phase-badge" style="background:var(--color-background-success);color:var(--color-text-success);">Running the project</span>
+    <div class="phase-line"></div>
+  </div>
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num" style="background:var(--color-background-success);color:var(--color-text-success);">9</div>
+      </div>
+      <div class="step-body">
+        <div class="step-title"><i class="ti ti-terminal-2" aria-hidden="true" style="font-size:16px;color:#4f46e5;"></i> Start two terminals side by side</div>
+        <div class="step-desc">Split the terminal with the <strong>+</strong> icon (or <kbd>Ctrl+Shift+5</kbd>). Run one command in each:</div>
+        <div class="two">
+          <div>
+            <div style="font-size:11px;color:var(--color-text-tertiary);margin-bottom:5px;display:flex;align-items:center;gap:5px;"><i class="ti ti-brand-python" aria-hidden="true" style="font-size:13px;"></i> Terminal 1 — Django</div>
+            <div class="term"><span class="c">python</span> manage.py runserver</div>
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--color-text-tertiary);margin-bottom:5px;display:flex;align-items:center;gap:5px;"><i class="ti ti-wind" aria-hidden="true" style="font-size:13px;"></i> Terminal 2 — Tailwind</div>
+            <div class="term"><span class="c">cd</span> theme/static_src<br><span class="c">npm</span> run start</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" style="border-color:var(--color-border-success);background:var(--color-background-success);">
+      <div class="step-left">
+        <div class="step-num" style="background:var(--color-text-success);color:#fff;">10</div>
+      </div>
+      <div class="step-body">
+        <div class="step-title"><i class="ti ti-rocket" aria-hidden="true" style="font-size:16px;color:var(--color-text-success);"></i> Open in your browser</div>
+        <div class="url-list">
+          <div class="url-row"><span class="url-label"><i class="ti ti-home" aria-hidden="true" style="font-size:13px;margin-right:4px;"></i>Site</span><span class="url-val">http://127.0.0.1:8000/</span></div>
+          <div class="url-row"><span class="url-label"><i class="ti ti-settings" aria-hidden="true" style="font-size:13px;margin-right:4px;"></i>Admin</span><span class="url-val">http://127.0.0.1:8000/cms/</span></div>
+          <div class="url-row"><span class="url-label"><i class="ti ti-sitemap" aria-hidden="true" style="font-size:13px;margin-right:4px;"></i>Sitemap</span><span class="url-val">http://127.0.0.1:8000/sitemap.xml</span></div>
+          <div class="url-row"><span class="url-label"><i class="ti ti-language" aria-hidden="true" style="font-size:13px;margin-right:4px;"></i>Translations</span><span class="url-val">http://127.0.0.1:8000/rosetta/</span></div>
+        </div>
+        <div style="margin-top:10px;font-size:13px;color:var(--color-text-success);">Log in to the admin with the username and password you created in step 7.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="phase">
+  <div class="phase-label">
+    <span class="phase-badge" style="background:var(--color-background-warning);color:var(--color-text-warning);">Fix email (optional)</span>
+    <div class="phase-line"></div>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-left">
+        <div class="step-num" style="background:var(--color-background-warning);color:var(--color-text-warning);"><i class="ti ti-mail" aria-hidden="true" style="font-size:13px;"></i></div>
+      </div>
+      <div class="step-body">
+        <div class="step-title">Enable real email sending</div>
+        <div class="step-desc">By default emails print to the terminal. To actually send them, open <code>mysite/settings.py</code> and replace the email section:</div>
+        <div class="term"><span class="g"># Replace this:</span><br>EMAIL_BACKEND = <span class="s">'django.core.mail.backends.console.EmailBackend'</span><br><br><span class="g"># With this (Gmail example):</span><br>EMAIL_BACKEND = <span class="s">'django.core.mail.backends.smtp.EmailBackend'</span><br>EMAIL_HOST = <span class="s">'smtp.gmail.com'</span><br>EMAIL_PORT = <span class="s">587</span><br>EMAIL_USE_TLS = <span class="s">True</span><br>EMAIL_HOST_USER = <span class="s">'you@gmail.com'</span><br>EMAIL_HOST_PASSWORD = <span class="s">'your-app-password'</span><br>DEFAULT_FROM_EMAIL = <span class="s">'you@gmail.com'</span></div>
+        <div class="warn"><i class="ti ti-alert-triangle" aria-hidden="true" style="font-size:14px;vertical-align:-2px;margin-right:4px;"></i>Gmail requires an <strong>App Password</strong> — not your regular password. Enable 2FA on your Google account first, then generate one at <span style="font-family:var(--font-mono);font-size:11px;">myaccount.google.com/apppasswords</span>.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
